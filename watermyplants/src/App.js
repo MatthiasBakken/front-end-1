@@ -1,15 +1,12 @@
 import "./App.css";
 import React from "react";
-import Plant from './components/plantComponent'
+import Login from "./components/Login";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-
-        <Plant />
-        <img src="" className="App-logo" alt="logo" />
-        
+        <Login />
       </header>
     </div>
   );
