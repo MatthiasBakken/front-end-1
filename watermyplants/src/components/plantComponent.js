@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import PlantHelper from './plantComponentHelper'
 
-export default function Plant (props) {
+export default function Plant(props) {
     const {
         values, 
         submit, 
@@ -15,32 +16,39 @@ const onSubmit = evt => {
     submit()
 }
 
-// const onChange = evt = {
-//     const { name, value, checked, type } = evt.target
-//     change(name, valueToUse)
-// }
+const onChange = evt => {
+    const { name, value, checked, type } = evt.target
+    const valueToUse = type === "checkbox" ? checked : value
+    change(name, valueToUse)
+}
 return (
     <form className='form container' onSubmit={onSubmit}>
-        <div className='form-group submit'>
+        
             <h2>Water My Plants</h2>
-            
-        </div>
+        
 
+        <div className='form-group errors'>
+            <div>{errors.plantName}</div>
+            <div>{errors.nickname}</div>
+            <div>{errors.species}</div>
+            <div>{errors.h20frequency}</div>
+        </div>
+        
         <div className='form-group inputs'>
             <h4>Add a plant </h4>
             <label>plant's nickname
                 <input
-                // value={values.plantNickname}
-                // onChange={onChange}
-                name='plantNickname'
+                value={values.nickname}
+                onChange={onChange}
+                name='nickame'
                 type='text'
                 />
             </label>
 
             <label>plant's name
                 <input
-                // value={values.plantName}
-                // onChange={onChange}
+                value={values.plantName}
+                onChange={onChange}
                 name='plantName'
                 type='text'
                 />
@@ -48,8 +56,8 @@ return (
 
             <label>species
                 <input
-                // value={values.plantName}
-                // onChange={onChange}
+                value={values.species}
+                onChange={onChange}
                 name='species'
                 type='text'
                 />
@@ -57,19 +65,20 @@ return (
 
             <label>watering frequency
                 <input
-                // value={values.plantName}
-                // onChange={onChange}
-                name='wateringFrequency'
+                value={values.h20frequency}
+                onChange={onChange}
+                name='h20frequency'
                 type='text'
                 />
             </label>
         </div>
-        
+
         <h6>upload image</h6>
-
-        <button disabled={disabled}>add plant</button>
+        
+        <div className='form-group submit'>
+            <button disabled={disabled}>add plant</button>
         <button>cancel</button>
-
+        </div>
         
     </form>
 
