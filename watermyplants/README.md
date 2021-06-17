@@ -1,3 +1,11 @@
+# Starting up this project
+
+cd into root dir
+run - yarn
+run - sass --watch src/styles:src/styles
+open another terminal in root
+run - yarn start
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

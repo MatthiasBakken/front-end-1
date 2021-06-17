@@ -1,13 +1,16 @@
 import "./App.css";
 import React from "react";
 import Login from "./components/Login";
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Login />
-      </header>
+      <Switch>
+        <Route path="/login">
+          <Login />
+        </Route>
+      </Switch>
     </div>
   );
 }
