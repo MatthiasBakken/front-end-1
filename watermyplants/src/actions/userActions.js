@@ -21,7 +21,7 @@ export const getUser = () => (dispatch) => {
 
 export const editUser = (user) => (dispatch) => {
   axiosWithAuth()
-    .put("/users/id", USER)
+    .put("/users/id", user)
     .then((res) => {
       dispatch({ type: EDIT_USER, payload: res.data });
     })
