@@ -22,10 +22,11 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDeafult();
     axiosWithAuth()
-      .post("/login", form)
+      .post("/auth/login", form)
       .then((res) => {
+        console.log(`Login post response ${res.data}`);
         localStorage.setItem("token", res.data.payload);
-        push("/user");
+        // push("/user");
       })
       .catch((err) => {
         console.log(err);
