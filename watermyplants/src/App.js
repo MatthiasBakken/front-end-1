@@ -1,6 +1,7 @@
 import "./App.css";
 import React from "react";
 import Login from "./components/Login";
+import Plant from './components/plantComponentForm.js'
 
 function App() {
   return (
@@ -8,6 +9,9 @@ function App() {
       <header className="App-header">
         <Login />
       </header>
+    
+      <Plant />
+    
     </div>
   );
 }
