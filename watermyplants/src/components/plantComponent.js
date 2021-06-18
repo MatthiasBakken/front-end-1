@@ -4,6 +4,7 @@ import PlantHelper from './plantComponentHelper'
 
 
 export default function Plant(props) {
+
     const values = {
         plant: {
             id: "",
@@ -25,11 +26,13 @@ export default function Plant(props) {
     
 const onSubmit = evt => {
     evt.preventDefault()
+
     // submit()
 }
 
 const onChange = evt => {
     const { name, value } = evt.target   
+
     // change({...values, [name]:value})
 }
 return (
@@ -39,6 +42,7 @@ return (
         
 
         <div className='form-group errors'>
+
             <div>this will be plant name error</div>
             <div>this will be plant name errornickname</div>
             <div>this will be plant name error species</div>
@@ -49,6 +53,7 @@ return (
             <h4>Add a plant </h4>
             <label>plant's nickname
                 <input
+
                 value={values.plant.nickname}
                 onChange={onChange}
                 name='nickame'
