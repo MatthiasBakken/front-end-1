@@ -1,3 +1,5 @@
+import {} from "../actions";
+
 export const initialState = {
   plant: {
     id: "",
@@ -7,6 +9,7 @@ export const initialState = {
     image: "",
   },
   editing: false,
+  isFetching: false,
 };
 
 export const plantReducer = (state = initialState, action) => {
