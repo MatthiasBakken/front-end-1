@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import PlantHelper from './plantComponentHelper'
 
+
+
 export default function Plant(props) {
     const {
         values, 
@@ -10,16 +12,19 @@ export default function Plant(props) {
         errors, 
     } = props
 
-
+    const onCancel = evt => {
+        evt.prevenDefault()
+        // reset()
+    }
+    
 const onSubmit = evt => {
     evt.preventDefault()
     submit()
 }
 
 const onChange = evt => {
-    const { name, value, checked, type } = evt.target
-    const valueToUse = type === "checkbox" ? checked : value
-    change(name, valueToUse)
+    const { name, value } = evt.target   
+    change({...values, [name]:value})
 }
 return (
     <form className='form container' onSubmit={onSubmit}>
@@ -28,7 +33,7 @@ return (
         
 
         <div className='form-group errors'>
-            <div>{errors.plantName}</div>
+            <div>{errors.plantname}</div>
             <div>{errors.nickname}</div>
             <div>{errors.species}</div>
             <div>{errors.h20frequency}</div>
@@ -47,9 +52,9 @@ return (
 
             <label>plant's name
                 <input
-                value={values.plantName}
+                value={values.plantname}
                 onChange={onChange}
-                name='plantName'
+                name='plantname'
                 type='text'
                 />
             </label>
@@ -77,11 +82,9 @@ return (
         
         <div className='form-group submit'>
             <button disabled={disabled}>add plant</button>
-        <button>cancel</button>
+        <button id='cancelBtn' onClick={onCancel}>cancel</button>
         </div>
         
     </form>
-
 )
-
 }

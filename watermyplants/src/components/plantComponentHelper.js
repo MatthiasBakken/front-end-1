@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import Plant from './plantComponent'
 
-export default function PlantHelper() {
-
-
 // Initial States
+
 const initialFormValues = {
-    name: '',
+    plantname: '',
     nickname: '', 
     species: '', 
     h20frequency: '', 
 }
 
 const initialFormErrors = {
-    name: '',
+    plantname: '',
     nickname: '', 
     species: '', 
     h20frequency: '',  
@@ -21,6 +19,9 @@ const initialFormErrors = {
 const initialPlants = []
 const initialDisabled = true 
 
+
+
+export default function PlantHelper() {
 // States
 const [plants, setPlants] = useState(initialPlants)
 const [formValues, setFormValues] = useState(initialFormValues)
@@ -38,6 +39,7 @@ const getPlants = () => {
     // .catch(err => console.log(err))
 }
 
+
 const postNewPlant = newPlant => {
     // axios.post(newPlant) 
     // .then((res) => {
@@ -50,6 +52,7 @@ const postNewPlant = newPlant => {
 }
 
 // Event Handlers
+
 const inputChange = (name, value) => {
 
     setFormValues({
@@ -61,13 +64,17 @@ const inputChange = (name, value) => {
 const formSubmit  = () => {
     console.log('trying to submit the form')
     const newPlant = {
-        name: formValues.name.trim(), 
+        plantname: formValues.plantname.trim(), 
         nickname: formValues.nickname.trim(),
         species: formValues.species.trim(),
         h20frequency: formValues.h20frequency.trim(),
     }
     postNewPlant(newPlant)
 }
+return (
+    <>
+    </>
+)
 
 // Side Effects
 
