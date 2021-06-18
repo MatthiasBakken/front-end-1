@@ -1,4 +1,4 @@
-import axiosWithAuth from "../utils/axiosWithAuth";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 export const LOADING_PLANTS = "LOADING_PLANTS";
 export const PLANT_SUCCESS = "PLANT_SUCCESS";

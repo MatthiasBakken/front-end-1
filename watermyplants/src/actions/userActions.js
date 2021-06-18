@@ -1,4 +1,5 @@
-import axiosWithAuth from "../utils/axiosWithAuth";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
+import axios from "axios";
 
 export const LOADING_USER = "LOADING_USER";
 export const USER_SUCCESS = "USER_SUCCESS";
@@ -31,7 +32,7 @@ export const editUser = (user) => (dispatch) => {
 };
 
 export const addUser = (user) => (dispatch) => {
-  axiosWithAuth() //shouldn't need auth
+  axios
     .post("/user/add", user)
     .then((res) => {
       dispatch({ type: ADD_USER, payload: res.data });
