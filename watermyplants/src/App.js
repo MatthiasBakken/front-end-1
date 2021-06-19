@@ -7,6 +7,7 @@ import { Route, Switch } from "react-router-dom";
 import Header from "./components/Header";
 import PlantHelper from "./components/plantComponentHelper";
 import userProfile from "./components/userProfile";
+import { PrivateRoute } from "./components/PrivateRoute";
 
 function App() {
   return (
@@ -17,8 +18,8 @@ function App() {
       <Switch>
         <Route exact path="/" component={Login} />
         <Route path="/adduser" component={Registration} />
-        <Route path="/addplant" component={Plant} />
-        <Route path="/user" component={userProfile} />
+        <PrivateRoute path="/addplant" component={Plant} />
+        <PrivateRoute path="/user" component={userProfile} />
       </Switch>
     </div>
   );
