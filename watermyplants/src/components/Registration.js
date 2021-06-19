@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Registration = () => {
-    const [form, setForm] = useState({
-        username: "",
-        "phone number": "",
-        password: "",
-        "repeat password": ""
-    });
+  const [form, setForm] = useState({
+    username: "",
+    "phone number": "",
+    password: "",
+    "repeat password": "",
+  });
 
     const StyledForm = styled.form`
         width: 500px;

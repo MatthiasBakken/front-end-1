@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import PlantHelper from './plantComponentHelper'
-
-
+import React, { useState, useEffect } from "react";
+import PlantHelper from "./plantComponentHelper";
 
 export default function Plant(props) {
 
@@ -97,5 +95,5 @@ return (
         </div>
         
     </form>
-)
+  );
 }
