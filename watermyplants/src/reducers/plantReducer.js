@@ -35,7 +35,7 @@ export const plantReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        plants: [action.payload],
+        plants: action.payload,
       };
     }
 

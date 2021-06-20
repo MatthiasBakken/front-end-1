@@ -15,7 +15,8 @@ const PlantList = (props) => {
   if (props.isLoading) {
     return <h1>Loading...</h1>;
   }
-
+  console.log("Plants in PlantList");
+  console.log(props.plants);
   return (
     <div className="plantListContainer">
       {props.plants.map((plant, index) => {
@@ -27,8 +28,8 @@ const PlantList = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    isLoading: state.plant.isLoading,
-    plants: state.plant.plants,
+    isLoading: state.plants.isLoading,
+    plants: state.plants.plants,
   };
 };
 
