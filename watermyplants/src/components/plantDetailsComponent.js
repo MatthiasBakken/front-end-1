@@ -1,28 +1,40 @@
-import React, { useState, useEffect } from 'react'
+import React from "react";
 
-export default function PlantDetails(props) {
-    const { plantId, close } = props 
-    const [details, setDetails] = useState(null)
+const PlantDetails = (props) => {
+  const { plant } = props;
+  // plants structure
+  // plant: {
+  //     plant_id: "",
+  //     nickname: "",
+  //     species: "",
+  //     h2o_frequency: "",
+  //     image: "",
+  //   }
+  let plantImage;
 
+  if (plant.image && plant.image !== "") {
+    plantImage = plant.image;
+  } else {
+    plantImage =
+      "https://i.pinimg.com/originals/b1/14/fa/b114fa2591d6d4702b1b9442011f9db3.jpg";
+  }
+  console.log(`plant value in Plant DetailsComponent:`);
+  console.log(plant);
+  return (
+    <div className="container">
+      <h2>Plant Details for {plant.name}</h2>
 
+      <div>
+        <img className="plantImage" src={plantImage} alt="plant" />
+        <p>nickname: {plant.nickname}</p>
+        <p>Species: {plant.species}</p>
+        <p>Watering Frequency: {plant.h20_frequency}</p>
+      </div>
 
-    return (
-        <div className='container'>
-            <h2>Plant Details (of plant with id {plantId})</h2>
-            {
-                details && 
-                <>
-                    <img>plant pic</img>
-                    <p>{details.plant.nickname}</p>
-                    <p>{details.plant.name}</p>
-                    <p>{details.plant.species}</p>
-                    <p>{details.plant.h20Frequency}</p>
-                    {details.PlantDetails.map((plant) => <li key={plant}>{plant}</li>)}
-                </>
-            }
-            <button>add plant </button>
-            <button>delete plant </button>
-        </div>
-    )
-}
+      <button>add plant </button>
+      <button>delete plant </button>
+    </div>
+  );
+};
 
+export default PlantDetails;
