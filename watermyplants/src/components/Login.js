@@ -20,12 +20,13 @@ const Login = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDeafult();
+    e.preventDefault();
     axiosWithAuth()
-      .post("/login", form)
+      .post("/auth/login", form)
       .then((res) => {
-        localStorage.setItem("token", res.data.payload);
-        push("/user");
+        // console.log(res.data);
+        localStorage.setItem("token", res.data.token);
+        push("/plantlist");
       })
       .catch((err) => {
         console.log(err);

@@ -13,6 +13,7 @@ export const getPlants = () => (dispatch) => {
   axiosWithAuth()
     .get("/plants")
     .then((res) => {
+      console.log(res);
       dispatch({ type: PLANT_SUCCESS, payload: res.data });
     })
     .catch((err) => {

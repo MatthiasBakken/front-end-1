@@ -8,8 +8,13 @@ const PlantList = (props) => {
   const getPlants = props.getPlants;
 
   useEffect(() => {
+    // debugger;
     getPlants();
   }, [getPlants]);
+
+  if (props.isLoading) {
+    return <h1>Loading...</h1>;
+  }
 
   return (
     <div className="plantListContainer">
@@ -22,8 +27,8 @@ const PlantList = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    isLoading: state.isLoading,
-    plants: state.plants,
+    isLoading: state.plant.isLoading,
+    plants: state.plant.plants,
   };
 };
 

@@ -12,12 +12,12 @@ export const initialState = {
   editing: false,
   isFetching: false,
 };
-// plants structure
-// plant: {
-//     id: "",
+// plant structure
+// {
+//     plant_id: "",
 //     nickname: "",
 //     species: "",
-//     h2oFrequency: "",
+//     h2o_frequency: "",
 //     image: "",
 //   }
 
@@ -35,7 +35,7 @@ export const plantReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        plants: [...action.payload],
+        plants: [action.payload],
       };
     }
 

@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 const PlantDetails = (props) => {
   const { plant } = props;
   // plants structure
   // plant: {
-  //     id: "",
+  //     plant_id: "",
   //     nickname: "",
   //     species: "",
-  //     h2oFrequency: "",
+  //     h2o_frequency: "",
   //     image: "",
   //   }
   let plantImage;
@@ -23,13 +23,13 @@ const PlantDetails = (props) => {
     <div className="container">
       <h2>Plant Details for {plant.name}</h2>
       {plant && (
-        <>
+        <div>
           <img src={plantImage} />
           <p>{plant.nickname}</p>
           <p>{plant.name}</p>
           <p>{plant.species}</p>
           <p>{plant.h20Frequency}</p>
-        </>
+        </div>
       )}
       <button>add plant </button>
       <button>delete plant </button>
