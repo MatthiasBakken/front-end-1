@@ -16,6 +16,12 @@ const Header = () => {
         <Link to="" onClick={logout}>
           Logout
         </Link>
+        {localStorage.getItem("token") ? (
+          <Link to="/plantlist">Plants</Link>
+        ) : (
+          ""
+        )}
+        {localStorage.getItem("token") ? <Link to="/user">User</Link> : ""}
       </nav>
     </div>
   );
