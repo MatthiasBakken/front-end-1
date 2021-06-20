@@ -8,10 +8,13 @@ import Header from "./components/Header";
 import PlantHelper from "./components/plantComponentHelper";
 import userProfile from "./components/userProfile";
 import { PrivateRoute } from "./components/PrivateRoute";
+import EditPlant from './components/plantEditForm'
 
 function App() {
   return (
     <div className="App">
+      
+    
       <header className="App-header">
         <Header />
       </header>
