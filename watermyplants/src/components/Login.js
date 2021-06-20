@@ -43,7 +43,6 @@ const Login = () => {
       <h1>Water My Plants</h1>
       <form onSubmit={handleSubmit}>
         <label>
-          {" "}
           Username:
           <input
             name="username"
