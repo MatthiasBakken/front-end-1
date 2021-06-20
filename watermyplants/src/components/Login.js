@@ -32,6 +32,11 @@ const Login = () => {
       });
   };
 
+  const handleSignupButton = (e) => {
+    e.preventDefault();
+    push("/adduser");
+  };
+
   return (
     <div>
       <h1>Water My Plants</h1>
@@ -54,7 +59,7 @@ const Login = () => {
           />
         </label>
         <button type="submit">Login</button>
-        <button>Sign Up</button>
+        <button onClick={handleSignupButton}>Sign Up</button>
       </form>
     </div>
   );
