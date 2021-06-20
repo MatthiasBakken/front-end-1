@@ -12,7 +12,7 @@ export const getUser = () => (dispatch) => {
   dispatch({ type: LOADING_USER });
 
   axiosWithAuth()
-    .get("/user:id")
+    .get("/users")
     .then((res) => {
       dispatch({ type: USER_SUCCESS, payload: res.data });
     })

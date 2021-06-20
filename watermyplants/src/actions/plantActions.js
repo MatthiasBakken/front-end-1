@@ -34,7 +34,7 @@ export const editPlant = (plant) => (dispatch) => {
 
 export const addPlant = (plant) => (dispatch) => {
   axiosWithAuth()
-    .post("/plants/add", plant)
+    .post("/plants", plant)
     .then((res) => {
       dispatch({ type: ADD_PLANT, payload: res.data });
     })

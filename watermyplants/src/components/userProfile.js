@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
+import { getUser } from "../actions/userActions";
 
-const userProfileComp = () => {
-  const { details, setDetails } = useState(null);
+const userProfileComp = (props) => {
+  const { user } = props;
+
+  const getUser = props.getUser;
+
+  useEffect(() => {
+    getUser();
+  }, [getUser]);
 
   return (
     <div className="profileContainer">
@@ -9,11 +17,11 @@ const userProfileComp = () => {
       {
         <div>
           <a>User name</a>
-          <a>{details.user.username}</a>
+          <a>{user.username}</a>
           <a>Password</a>
-          <a>{details.user.password}</a>
+          <a>{user.password}</a>
           <a>Phone number</a>
-          <a>{details.user.phoneNumber}</a>
+          <a>{user.phoneNumber}</a>
         </div>
       }
       <button>complete</button>
@@ -22,4 +30,10 @@ const userProfileComp = () => {
   );
 };
 
-export default userProfileComp;
+const mapStateToProps = (state) => {
+  return {
+    user: state.user.user,
+  };
+};
+
+export default connect(mapStateToProps, { getUser })(userProfileComp);

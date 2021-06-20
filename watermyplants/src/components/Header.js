@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const logout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("user_id");
     window.location.href = "/";
   };
   return (

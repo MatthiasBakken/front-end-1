@@ -30,8 +30,6 @@ const PlantDetails = (props) => {
         <p>Species: {plant.species}</p>
         <p>Watering Frequency: {plant.h20_frequency}</p>
       </div>
-
-      <button>add plant </button>
       <button>delete plant </button>
     </div>
   );

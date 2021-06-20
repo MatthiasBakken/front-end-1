@@ -24,8 +24,10 @@ const Login = () => {
     axiosWithAuth()
       .post("/auth/login", form)
       .then((res) => {
-        // console.log(res.data);
+        console.log(res);
         localStorage.setItem("token", res.data.token);
+        const user_id = parseInt(res.data.message.match(/(\d+)$/)[0], 10);
+        localStorage.setItem("user_id", user_id);
         push("/plantlist");
       })
       .catch((err) => {
