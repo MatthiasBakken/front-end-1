@@ -16,12 +16,10 @@ const userProfileComp = (props) => {
       <h2>User Profile</h2>
       {
         <div>
-          <a>User name</a>
+          <p>User name</p>
           <a>{user.username}</a>
-          <a>Password</a>
-          <a>{user.password}</a>
-          <a>Phone number</a>
-          <a>{user.phoneNumber}</a>
+          <p>Phone number</p>
+          <a>{user.phonenumber}</a>
         </div>
       }
       <button>complete</button>
@@ -31,8 +29,12 @@ const userProfileComp = (props) => {
 };
 
 const mapStateToProps = (state) => {
+  const user_id = Number(localStorage.getItem("user_id"));
+
+  const userInfo = state.user.user;
+
   return {
-    user: state.user.user,
+    user: userInfo,
   };
 };
 

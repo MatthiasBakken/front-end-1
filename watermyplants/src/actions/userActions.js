@@ -10,11 +10,13 @@ export const ADD_USER = "ADD_USER";
 
 export const getUser = () => (dispatch) => {
   dispatch({ type: LOADING_USER });
-
+  const user_id = Number(localStorage.getItem("user_id")) - 1;
   axiosWithAuth()
     .get("/users")
     .then((res) => {
-      dispatch({ type: USER_SUCCESS, payload: res.data });
+      console.log("get users axios:");
+      console.log(res);
+      dispatch({ type: USER_SUCCESS, payload: res.data[user_id] });
     })
     .catch((err) => {
       dispatch({ type: USER_FAIL, payload: { err } });
