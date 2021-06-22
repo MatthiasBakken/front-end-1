@@ -36,6 +36,8 @@ export const addPlant = (plant) => (dispatch) => {
   axiosWithAuth()
     .post("/plants", plant)
     .then((res) => {
+      console.log("add Plant res:");
+      console.log(res);
       dispatch({ type: ADD_PLANT, payload: res.data });
     })
     .catch((err) => {
@@ -45,9 +47,10 @@ export const addPlant = (plant) => (dispatch) => {
 
 export const deletePlant = (plant) => (dispatch) => {
   axiosWithAuth()
-    .delete(`/plants/${plant.id}`)
+    .delete(`/plants/${plant.plant_id}`)
     .then((res) => {
-      dispatch({ type: DELETE_PLANT, payload: res.data });
+      console.log(res);
+      dispatch({ type: DELETE_PLANT, payload: plant.plant_id });
     })
     .catch((err) => {
       dispatch({ type: PLANT_FAIL, payload: { err } });

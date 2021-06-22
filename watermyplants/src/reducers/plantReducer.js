@@ -51,7 +51,7 @@ export const plantReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        plants: action.payload,
+        plants: [...state.plants],
       };
     }
 
@@ -64,10 +64,13 @@ export const plantReducer = (state = initialState, action) => {
     }
 
     case DELETE_PLANT: {
+      const updatedPlants = state.plants.filter(
+        (item) => action.payload !== item.id
+      );
       return {
         ...state,
         isLoading: false,
-        plants: action.payload,
+        plants: updatedPlants,
       };
     }
 
