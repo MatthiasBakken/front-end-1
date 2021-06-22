@@ -1,7 +1,11 @@
 import React from "react";
+import { connect } from "react-redux";
+import { deletePlant } from "../actions/plantActions";
+import { useHistory } from "react-router-dom";
 
 const PlantDetails = (props) => {
   const { plant } = props;
+  const { push } = useHistory();
   // plants structure
   // plant: {
   //     plant_id: "",
@@ -10,6 +14,14 @@ const PlantDetails = (props) => {
   //     h2o_frequency: "",
   //     image: "",
   //   }
+
+  const handleDelete = (e) => {
+    e.preventDefault();
+    // console.log(plant);
+    props.deletePlant(plant);
+    push("/plantlist");
+  };
+
   let plantImage;
 
   if (plant.plant_img && plant.plant_img !== "") {
@@ -22,7 +34,7 @@ const PlantDetails = (props) => {
   console.log(plant);
   return (
     <div className="container">
-      <h2>Plant Details for {plant.name}</h2>
+      <h2>Plant Details for {plant.nickname}</h2>
 
       <div>
         <img className="plantImage" src={plantImage} alt="plant" />
@@ -30,9 +42,9 @@ const PlantDetails = (props) => {
         <p>Species: {plant.species}</p>
         <p>Watering Frequency: {plant.h20_frequency}</p>
       </div>
-      <button>delete plant </button>
+      <button onClick={handleDelete}>delete plant </button>
     </div>
   );
 };
 
-export default PlantDetails;
+export default connect(null, { deletePlant })(PlantDetails);

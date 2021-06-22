@@ -22,6 +22,7 @@ const Plant = (props) => {
 
   const onCancel = (evt) => {
     evt.preventDefault();
+    push("/plantlist");
     // reset()
   };
 
