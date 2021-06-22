@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import PlantDetails from "./plantDetailsComponent";
-import { getPlants } from "../actions/plantActions";
+import { getPlants, addPlant } from "../actions/plantActions";
 import { connect } from "react-redux";
 
 const PlantList = (props) => {
@@ -19,6 +19,7 @@ const PlantList = (props) => {
   console.log(props.plants);
   return (
     <div className="plantListContainer">
+      <button>add plant </button>
       {props.plants.map((plant, index) => {
         return <PlantDetails plant={plant} key={index} />;
       })}
@@ -33,4 +34,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { getPlants })(PlantList);
+export default connect(mapStateToProps, { getPlants, addPlant })(PlantList);
