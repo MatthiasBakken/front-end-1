@@ -36,6 +36,8 @@ export const addPlant = (plant) => (dispatch) => {
   axiosWithAuth()
     .post("/plants", plant)
     .then((res) => {
+      console.log("add Plant res:");
+      console.log(res);
       dispatch({ type: ADD_PLANT, payload: res.data });
     })
     .catch((err) => {

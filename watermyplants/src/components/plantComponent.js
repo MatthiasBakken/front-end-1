@@ -1,99 +1,93 @@
-import React, { useState, useEffect } from "react";
-import PlantHelper from "./plantComponentHelper";
+import React, { useState } from "react";
+import { connect } from "react-redux";
+import { addPlant } from "../actions/plantActions";
+import { useHistory } from "react-router-dom";
 
-export default function Plant(props) {
+const Plant = (props) => {
+  const [values, setValues] = useState({
+    nickname: "",
+    species: "",
+    h20_frequency: "",
+    plant_img: "",
+  });
 
-    const values = {
-        plant: {
-            id: "",
-            nickname: "",
-            species: "",
-            h2oFrequency: "",
-            image: "",
-            }, 
-        // submit, 
-        // change,
-        // disabled, 
-        // errors, 
-    } 
+  const [errors, setErrors] = useState({
+    nickname: "",
+    species: "",
+    h20_frequency: "",
+  });
 
-    const onCancel = evt => {
-        evt.prevenDefault()
-        // reset()
-    }
-    
-const onSubmit = evt => {
-    evt.preventDefault()
+  const addPlant = props.addPlant;
+  const { push } = useHistory();
 
+  const onCancel = (evt) => {
+    evt.preventDefault();
+    // reset()
+  };
+
+  const onSubmit = (evt) => {
+    evt.preventDefault();
+    addPlant(values);
+    push("/plantlist");
     // submit()
-}
+  };
 
-const onChange = evt => {
-    const { name, value } = evt.target   
+  const onChange = (evt) => {
+    setValues({
+      ...values,
+      [evt.target.name]: evt.target.value,
+    });
+  };
+  return (
+    <form className="formContainer" onSubmit={onSubmit}>
+      <h2>Water My Plants</h2>
 
-    // change({...values, [name]:value})
-}
-return (
-    <form className='form container' onSubmit={onSubmit}>
-        
-            <h2>Water My Plants</h2>
-        
+      <div className="form-group errors">
+        <div>{errors.nickname}</div>
+        <div>{errors.species}</div>
+        <div>{errors.h20_frequency}</div>
+      </div>
 
-        <div className='form-group errors'>
+      <div className="form-group inputs">
+        <h4>Add a plant </h4>
+        <label>
+          plant's nickname
+          <input value={values.nickname} onChange={onChange} name="nickname" />
+        </label>
 
-            <div>this will be plant name error</div>
-            <div>this will be plant name errornickname</div>
-            <div>this will be plant name error species</div>
-            <div>this will be plant name errorh20frequency</div>
-        </div>
-        
-        <div className='form-group inputs'>
-            <h4>Add a plant </h4>
-            <label>plant's nickname
-                <input
+        <label>
+          species
+          <input value={values.species} onChange={onChange} name="species" />
+        </label>
 
-                value={values.plant.nickname}
-                onChange={onChange}
-                name='nickame'
-                type='text'
-                />
-            </label>
+        <label>
+          watering frequency
+          <input
+            value={values.h20_frequency}
+            onChange={onChange}
+            name="h20_frequency"
+          />
+        </label>
 
-            <label>plant's name
-                <input
-                value={values.plant.plantname}
-                onChange={onChange}
-                name='plantname'
-                type='text'
-                />
-            </label>
+        <label>
+          <h6> - optional - </h6>
+          image URL:
+          <input
+            value={values.plant_img}
+            onChange={onChange}
+            name="plant_img"
+          />
+        </label>
+      </div>
 
-            <label>species
-                <input
-                value={values.plant.species}
-                onChange={onChange}
-                name='species'
-                type='text'
-                />
-            </label>
-
-            <label>watering frequency
-                <input
-                value={values.plant.h20frequency}
-                onChange={onChange}
-                name='h20frequency'
-                type='text'
-                />
-            </label>
-        </div>
-
-        <h6>upload image</h6>
-        
-        <div className='form-group submit'>
-            <button>add plant</button>
-        <button id='cancelBtn' onClick={onCancel}>cancel</button>
-        </div>
-        
+      <div className="form-group submit">
+        <button type="submit">add plant</button>
+        <button id="cancelBtn" onClick={onCancel}>
+          cancel
+        </button>
+      </div>
     </form>
   );
-}
+};
+
+export default connect(null, { addPlant })(Plant);

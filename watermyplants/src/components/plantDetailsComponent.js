@@ -12,8 +12,8 @@ const PlantDetails = (props) => {
   //   }
   let plantImage;
 
-  if (plant.image && plant.image !== "") {
-    plantImage = plant.image;
+  if (plant.plant_img && plant.plant_img !== "") {
+    plantImage = plant.plant_img;
   } else {
     plantImage =
       "https://i.pinimg.com/originals/b1/14/fa/b114fa2591d6d4702b1b9442011f9db3.jpg";
