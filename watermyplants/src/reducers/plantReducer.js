@@ -17,8 +17,8 @@ export const initialState = {
 //     plant_id: "",
 //     nickname: "",
 //     species: "",
-//     h2o_frequency: "",
-//     image: "",
+//     h20_frequency: "",
+//     plant_img: "",
 //   }
 
 export const plantReducer = (state = initialState, action) => {
@@ -51,7 +51,7 @@ export const plantReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        plants: action.payload,
+        plants: [...state.plants],
       };
     }
 
@@ -59,15 +59,18 @@ export const plantReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        plants: action.payload,
+        plants: [...action.payload],
       };
     }
 
     case DELETE_PLANT: {
+      const updatedPlants = state.plants.filter(
+        (item) => action.payload !== item.id
+      );
       return {
         ...state,
         isLoading: false,
-        plants: action.payload,
+        plants: updatedPlants,
       };
     }
 
