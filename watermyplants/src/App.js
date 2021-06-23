@@ -1,4 +1,3 @@
-import "./App.css";
 import React from "react";
 import Login from "./components/Login";
 import Plant from "./components/Plant";
