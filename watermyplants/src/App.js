@@ -7,6 +7,7 @@ import { Route, Switch } from "react-router-dom";
 import Header from "./components/Header";
 import PlantList from "./components/PlantList";
 import userProfile from "./components/userProfile";
+import plantEditForm from "./components/plantEditForm";
 import { PrivateRoute } from "./components/PrivateRoute";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <PrivateRoute exact path="/addplant" component={Plant} />
         <PrivateRoute exact path="/user" component={userProfile} />
         <PrivateRoute exact path="/plantlist" component={PlantList} />
+        <PrivateRoute exact path="/editplant" component={plantEditForm} />
         <Route exact path="/login" component={Login} />
       </Switch>
     </div>
