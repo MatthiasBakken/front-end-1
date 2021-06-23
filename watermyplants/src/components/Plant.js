@@ -16,6 +16,8 @@ const errors = {
   waterFrequency: "Must be more than zero"
 }
 
+const PLANT = "plant-form__";
+
 const Plant = (props) => {
   const [values, setValues] = useState(initialState);
 
@@ -34,44 +36,43 @@ const Plant = (props) => {
     });
   };
   return (
-    <form className="formContainer" onSubmit={( evt ) => {
-      evt.preventDefault();
-      addPlant(values);
-      push("/plantlist");
-    }}>
-      <h2>Water My Plants</h2>
+    <div className={`${PLANT}container`}>
+      <form className={`${PLANT}form`} onSubmit={( evt ) => {
+        evt.preventDefault();
+        addPlant(values);
+        push("/plantlist");
+      }}>
+        <h4>ADD A PLANT </h4>
+        <div className={`${PLANT}content`}>
+          <span className={`${PLANT}label-input-containers`}>
+            <label>Plant's Nickname:</label>
+            <input value={values.nickname} onChange={onChange} name="nickname" />
+            {values.nickname && values.nickname.length <= 3 ? <div>{errors.length}</div> : null}
+          </span>
+          <span className={`${PLANT}label-input-containers`}>
+            <label>Species:</label>
+            <input value={values.species} onChange={onChange} name="species" />
+            {values.species && values.species.length <= 3 ? <div>{errors.length}</div> : null}
+          </span>
+          <span className={`${PLANT}label-input-containers`}>
+            <label>Watering Frequency:</label>
+            <input value={values.h20_frequency} onChange={onChange} name="h20_frequency" type="number" />
+            {values.h20_frequency && values.h20_frequency < 1 ? <div>{errors.waterFrequency}</div> : null}
+          </span>
+          <span className={`${PLANT}label-input-containers`}>
+            <label>Image URL:</label>
+            <input value={values.plant_img} onChange={onChange} name="plant_img" type="url"/>
+          </span>
+        </div>
 
-      <div className="form-group errors">
-        <div>{errors.nickname}</div>
-        <div>{errors.species}</div>
-        <div>{errors.h20_frequency}</div>
-      </div>
-
-      <div className="form-group inputs">
-        <h4>Add a Plant </h4>
-        <label>Plant's Nickname:</label>
-        <input value={values.nickname} onChange={onChange} name="nickname" />
-        {values.nickname && values.nickname.length <= 3 ? <div>{errors.length}</div> : null}
-      
-        <label>Species:</label>
-        <input value={values.species} onChange={onChange} name="species" />
-        {values.species && values.species.length <= 3 ? <div>{errors.length}</div> : null}
-
-        <label>Watering Frequency:</label>
-        <input value={values.h20_frequency} onChange={onChange} name="h20_frequency" type="number" />
-        {values.h20_frequency && values.h20_frequency < 1 ? <div>{errors.waterFrequency}</div> : null}
-        
-        <label>Image URL:</label>
-        <input value={values.plant_img} onChange={onChange} name="plant_img" type="url"/>
-      </div>
-
-      <div className="form-group buttons">
-        <button type="submit">add plant</button>
-        <button onClick={onCancel}>
-          cancel
-        </button>
-      </div>
-    </form>
+        <div className={`${PLANT}buttons-container`}>
+          <button type="submit">add plant</button>
+          <button onClick={onCancel}>
+            cancel
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };
 

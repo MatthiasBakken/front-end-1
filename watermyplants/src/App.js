@@ -20,7 +20,7 @@ function App() {
       </header>
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/adduser" component={Registration} />
+        <Route exact path="/register" component={Registration} />
         <PrivateRoute exact path="/addplant" component={Plant} />
         <PrivateRoute exact path="/user" component={User} />
         <PrivateRoute exact path="/plantlist" component={PlantList} />

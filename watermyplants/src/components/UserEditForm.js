@@ -7,14 +7,12 @@ import { useHistory } from "react-router-dom";
 const UserEditForm = ( props ) => {
 
   const [ user, setUser ] = useState( props.user );
-  
+
   const { push } = useHistory();
 
   const [ editPhone, setEditPhone ] = useState();
 
-
-  const handlePhoneNumberEdit = ( e ) => {
-    e.preventDefault;
+  const handlePhoneNumberEdit = () => {
     setEditPhone( true );
   };
 
@@ -34,7 +32,6 @@ const UserEditForm = ( props ) => {
   return (
     <div>
       <header>
-        <h2>Water My Plants</h2>
         <h4>{user.username}</h4>
       </header>
 
@@ -59,10 +56,7 @@ const UserEditForm = ( props ) => {
 };
 
 const mapStateToProps = ( state ) => {
-  const user_id = Number( localStorage.getItem( "user_id" ) );
-
   const userInfo = state.user.user;
-
   return {
     user: userInfo,
   };

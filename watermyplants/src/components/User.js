@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { getUser } from "../actions/userActions";
 import { useHistory } from "react-router-dom";
@@ -39,8 +39,6 @@ const User = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  const user_id = Number(localStorage.getItem("user_id"));
-
   const userInfo = state.user.user;
 
   return {

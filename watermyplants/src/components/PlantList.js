@@ -20,11 +20,10 @@ const PlantList = (props) => {
   if (props.isLoading) {
     return <h1>Loading...</h1>;
   }
-  // console.log("Plants in PlantList");
-  // console.log(props.plants);
+
   return (
     <div className="plantListContainer">
-      <button onClick={handleAddPlant}>add plant </button>
+      <button onClick={handleAddPlant}>Add Plant</button>
       {props.plants.map((plant, index) => {
         return <PlantDetails plant={plant} key={index} />;
       })}

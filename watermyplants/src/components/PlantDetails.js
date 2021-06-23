@@ -6,18 +6,9 @@ import { useHistory } from "react-router-dom";
 const PlantDetails = (props) => {
   const { plant } = props;
   const { push } = useHistory();
-  // plants structure
-  // plant: {
-  //     plant_id: "",
-  //     nickname: "",
-  //     species: "",
-  //     h2o_frequency: "",
-  //     image: "",
-  //   }
 
   const handleDelete = (e) => {
     e.preventDefault();
-    // console.log(plant);
     props.deletePlant(plant);
     push("/plantlist");
   };
