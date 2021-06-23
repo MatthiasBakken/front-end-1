@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { getUser } from "../actions/userActions";
+import { useHistory } from "react-router-dom";
 
 const userProfileComp = (props) => {
   const { user } = props;
@@ -15,8 +16,8 @@ const userProfileComp = (props) => {
   const handleEdit = (e) => {
     e.preventDefault();
 
-    push('/edituser')
-  }
+    push("/edituser");
+  };
 
   return (
     <div className="profileContainer">
@@ -32,7 +33,7 @@ const userProfileComp = (props) => {
       <button>complete</button>
       <button>cancel</button>
 
-      <button onClick={}>Edit</button>
+      <button onClick={handleEdit}>Edit</button>
     </div>
   );
 };
