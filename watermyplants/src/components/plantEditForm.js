@@ -12,9 +12,7 @@ const PlantEditForm = (props) => {
   const [form, setForm] = useState(currentPlant[0]);
   const { push } = useHistory();
 
-  const onCancel = (evt) => {
-    evt.prevenDefault();
-    // reset()
+  const onCancel = () => {
     push("/plantlist");
   };
 
