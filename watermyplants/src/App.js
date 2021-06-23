@@ -10,6 +10,7 @@ import PlantHelper from "./components/plantComponentHelper";
 import userProfile from "./components/userProfile";
 import { PrivateRoute } from "./components/PrivateRoute";
 import EditPlant from './components/plantEditForm'
+import UserEditForm from './components/UserEditForm';
 
 function App() {
   return (
