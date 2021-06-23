@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { getUser } from "../actions/userActions";
 import { useHistory } from "react-router-dom";
 
-const userProfileComp = (props) => {
+const User = (props) => {
   const { user } = props;
   const { push } = useHistory();
 
@@ -48,4 +48,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { getUser })(userProfileComp);
+export default connect(mapStateToProps, { getUser })(User);

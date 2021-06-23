@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { addPlant } from "../actions/plantActions";
 import { useHistory } from "react-router-dom";
 
+
 const Plant = (props) => {
   const [values, setValues] = useState({
     nickname: "",

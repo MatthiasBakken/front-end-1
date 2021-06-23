@@ -3,33 +3,32 @@ import { editUser } from "../actions/userActions";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 
-const UserEditForm = (props) => {
-  const [user, setUser] = useState(props.user);
+
+const UserEditForm = ( props ) => {
+
+  const [ user, setUser ] = useState( props.user );
+  
   const { push } = useHistory();
-  //   const [editPassWord, setEditPassWord] = useState();
-  const [editPhone, setEditPhone] = useState();
 
-  //   const handlePassWordEdit = (e) => {
-  //     e.preventDefault;
-  //     setEditPassWord(true);
-  //   };
+  const [ editPhone, setEditPhone ] = useState();
 
-  const handlePhoneNumberEdit = (e) => {
+
+  const handlePhoneNumberEdit = ( e ) => {
     e.preventDefault;
-    setEditPhone(true);
+    setEditPhone( true );
   };
 
-  const handleChange = (e) => {
-    setUser({
+  const handleChange = ( e ) => {
+    setUser( {
       ...user,
-      [e.target.name]: e.target.value,
-    });
+      [ e.target.name ]: e.target.value,
+    } );
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = ( e ) => {
     e.preventDefault();
-    props.editUser(user);
-    push("/user");
+    props.editUser( user );
+    push( "/user" );
   };
 
   return (
@@ -41,18 +40,6 @@ const UserEditForm = (props) => {
 
       <h4>Profile Settings</h4>
       <form onSubmit={handleSubmit}>
-        {/* <label>
-          Password: {user.password}
-          {editPassWord ? (
-            <input
-              name="password"
-              value={user.password}
-              onChange={handleChange}
-            />
-          ) : (
-            <button onClick={handlePassWordEdit}>edit</button>
-          )}
-        </label> */}
         <label>
           Phone number: {user.phonenumber}
           {editPhone ? (
@@ -71,8 +58,8 @@ const UserEditForm = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  const user_id = Number(localStorage.getItem("user_id"));
+const mapStateToProps = ( state ) => {
+  const user_id = Number( localStorage.getItem( "user_id" ) );
 
   const userInfo = state.user.user;
 

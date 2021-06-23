@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import PlantDetails from "./plantDetailsComponent";
+import PlantDetails from "./PlantDetails";
 import { getPlants } from "../actions/plantActions";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";

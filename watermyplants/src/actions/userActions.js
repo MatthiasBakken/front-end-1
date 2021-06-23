@@ -1,6 +1,5 @@
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
 
 export const LOADING_USER = "LOADING_USER";
 export const USER_SUCCESS = "USER_SUCCESS";
