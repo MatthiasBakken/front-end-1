@@ -23,7 +23,7 @@ function App() {
         <PrivateRoute exact path="/user" component={userProfile} />
         <PrivateRoute exact path="/plantlist" component={PlantList} />
         <PrivateRoute exact path="/editplant" component={plantEditForm} />
-        <PrivateRoute exact path="/editplant" component={UserEditForm} />
+        <PrivateRoute exact path="/edituser" component={UserEditForm} />
         <Route exact path="/login" component={Login} />
       </Switch>
     </div>
