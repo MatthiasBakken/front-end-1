@@ -13,8 +13,6 @@ export const getUser = () => (dispatch) => {
   axiosWithAuth()
     .get(`/users/${user_id}`)
     .then((res) => {
-      console.log("get user axios:");
-      console.log(res);
       dispatch({ type: USER_SUCCESS, payload: res.data });
     })
     .catch((err) => {

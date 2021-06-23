@@ -7,14 +7,12 @@ const PlantDetails = (props) => {
   const { plant } = props;
   const { push } = useHistory();
 
-  const handleDelete = (e) => {
-    e.preventDefault();
+  const handleDelete = () => {
     props.deletePlant(plant);
     push("/plantlist");
   };
 
-  const handleEdit = (e) => {
-    e.preventDefault();
+  const handleEdit = () => {
     localStorage.setItem("plant_id", plant.plant_id);
     push("/editplant");
   };
@@ -27,8 +25,6 @@ const PlantDetails = (props) => {
     plantImage =
       "https://i.pinimg.com/originals/b1/14/fa/b114fa2591d6d4702b1b9442011f9db3.jpg";
   }
-  console.log(`plant value in Plant DetailsComponent:`);
-  console.log(plant);
   return (
     <div className="container">
       <h2>Plant Details for {plant.nickname}</h2>

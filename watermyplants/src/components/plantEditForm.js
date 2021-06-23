@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { editPlant } from "../actions/plantActions";
 import { useHistory } from "react-router-dom";
 
+
 const PlantEditForm = (props) => {
   const plant_id = localStorage.getItem("plant_id");
   const currentPlant = props.plants.filter((plant) =>
@@ -70,7 +71,6 @@ const PlantEditForm = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log(state.plants);
   return {
     plants: state.plants.plants,
   };

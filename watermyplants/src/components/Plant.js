@@ -24,8 +24,7 @@ const Plant = (props) => {
   const addPlant = props.addPlant;
   const { push } = useHistory();
 
-  const onCancel = (evt) => {
-    evt.preventDefault();
+  const onCancel = () => {
     push("/plantlist");
   };
 
