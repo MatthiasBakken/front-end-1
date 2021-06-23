@@ -10,13 +10,13 @@ export const ADD_USER = "ADD_USER";
 
 export const getUser = () => (dispatch) => {
   dispatch({ type: LOADING_USER });
-  const user_id = Number(localStorage.getItem("user_id")) - 1;
+  const user_id = Number(localStorage.getItem("user_id"));
   axiosWithAuth()
-    .get("/users")
+    .get(`/users/${user_id}`)
     .then((res) => {
-      console.log("get users axios:");
+      console.log("get user axios:");
       console.log(res);
-      dispatch({ type: USER_SUCCESS, payload: res.data[user_id] });
+      dispatch({ type: USER_SUCCESS, payload: res.data });
     })
     .catch((err) => {
       dispatch({ type: USER_FAIL, payload: { err } });
@@ -25,7 +25,7 @@ export const getUser = () => (dispatch) => {
 
 export const editUser = (user) => (dispatch) => {
   axiosWithAuth()
-    .put("/users/id", user)
+    .put(`/users/${user.user_id}`, user)
     .then((res) => {
       dispatch({ type: EDIT_USER, payload: res.data });
     })

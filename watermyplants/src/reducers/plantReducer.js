@@ -17,8 +17,8 @@ export const initialState = {
 //     plant_id: "",
 //     nickname: "",
 //     species: "",
-//     h2o_frequency: "",
-//     image: "",
+//     h20_frequency: "",
+//     plant_img: "",
 //   }
 
 export const plantReducer = (state = initialState, action) => {
@@ -59,7 +59,7 @@ export const plantReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        plants: action.payload,
+        plants: [...action.payload],
       };
     }
 

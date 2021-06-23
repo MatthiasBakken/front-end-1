@@ -13,7 +13,7 @@ export const getPlants = () => (dispatch) => {
   axiosWithAuth()
     .get("/plants")
     .then((res) => {
-      console.log(res);
+      // console.log(res);
       dispatch({ type: PLANT_SUCCESS, payload: res.data });
     })
     .catch((err) => {
@@ -23,8 +23,9 @@ export const getPlants = () => (dispatch) => {
 
 export const editPlant = (plant) => (dispatch) => {
   axiosWithAuth()
-    .put("/plants/id", plant)
+    .put(`/plants/${plant.plant_id}`, plant)
     .then((res) => {
+      console.log(res);
       dispatch({ type: EDIT_PLANT, payload: res.data });
     })
     .catch((err) => {
