@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 
 import { connect } from "react-redux";
 import { addUser } from "../actions/userActions";
 import { useHistory } from "react-router-dom";
+
 
 const Registration = (props) => {
   const [state, setState] = useState({
@@ -11,12 +11,6 @@ const Registration = (props) => {
     password: "",
     phonenumber: "",
   });
-
-  //     user: {
-  //      username: "",
-  //      password: ''
-  //      phoneNumber: "",
-  //     },
 
   const { push } = useHistory();
 
@@ -34,20 +28,6 @@ const Registration = (props) => {
     addUser(state);
     push("/login");
   };
-
-  //   const StyledForm = styled.form`
-  //     width: 500px;
-  //     display: flex;
-  //     flex-direction: column;
-  //     justify-content: flex-start;
-  //   `;
-
-  //   const StyledButton = styled.button`
-  //     width: 30%;
-  //     height: 3rem;
-  //     margin-top: 3rem;
-  //     margin-left: 37%;
-  //   `;
 
   return (
     <div>
@@ -81,13 +61,6 @@ const Registration = (props) => {
             onChange={handleChange}
           />
         </label>
-        {/* <label>
-                        Repeat Password:
-                        <input 
-                            name="repeat password"
-                            value={form["repeat password"]}
-                        />
-                    </label> */}
         <button>Complete</button>
       </form>
     </div>
