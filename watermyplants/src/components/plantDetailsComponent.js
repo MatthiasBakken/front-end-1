@@ -24,7 +24,7 @@ const PlantDetails = (props) => {
 
   const handleEdit = (e) => {
     e.preventDefault();
-
+    localStorage.setItem("plant_id", plant.plant_id);
     push("/editplant");
   };
 
