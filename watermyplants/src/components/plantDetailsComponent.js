@@ -22,6 +22,12 @@ const PlantDetails = (props) => {
     push("/plantlist");
   };
 
+  const handleEdit = (e) => {
+    e.preventDefault();
+
+    push("/editplant");
+  };
+
   let plantImage;
 
   if (plant.plant_img && plant.plant_img !== "") {
@@ -43,6 +49,7 @@ const PlantDetails = (props) => {
         <p>Watering Frequency: {plant.h20_frequency}</p>
       </div>
       <button onClick={handleDelete}>delete plant </button>
+      <button onClick={handleEdit}>Edit plant </button>
     </div>
   );
 };
