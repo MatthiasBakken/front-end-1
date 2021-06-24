@@ -3,6 +3,11 @@ import { connect } from "react-redux";
 import { deletePlant } from "../actions/plantActions";
 import { useHistory } from "react-router-dom";
 
+import '../styles/PlantDetails.css';
+
+
+const DETAILS = 'plant-details__';
+
 const PlantDetails = (props) => {
   const { plant } = props;
   const { push } = useHistory();
@@ -26,10 +31,10 @@ const PlantDetails = (props) => {
       "https://i.pinimg.com/originals/b1/14/fa/b114fa2591d6d4702b1b9442011f9db3.jpg";
   }
   return (
-    <div className="container">
+    <div className={`${DETAILS}container`}>
       <h2>Plant Details for {plant.nickname}</h2>
 
-      <div>
+      <div className={`${DETAILS}content`}>
         <img className="plantImage" src={plantImage} alt="plant" />
         <p>nickname: {plant.nickname}</p>
         <p>Species: {plant.species}</p>

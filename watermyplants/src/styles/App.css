@@ -1,0 +1,16 @@
+body {
+  background: chocolate;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 62.5%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vw;
+  overflow: scroll;
+  align-items: center;
+}
+
+/*# sourceMappingURL=App.css.map */

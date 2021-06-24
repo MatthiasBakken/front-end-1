@@ -11,6 +11,8 @@ import UserEditForm from "./components/UserEditForm";
 import { PrivateRoute } from "./components/PrivateRoute";
 import HomePage from "./components/HomePage";
 
+import '../src/styles/App.css';
+
 function App() {
   return (
     <div className="App">

@@ -1,0 +1,9 @@
+.plant-list__container {
+  width: 80vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*# sourceMappingURL=PlantList.css.map */

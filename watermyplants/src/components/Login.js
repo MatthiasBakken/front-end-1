@@ -37,7 +37,7 @@ const Login = () => {
             localStorage.setItem( "token", res.data.token );
             const user_id = parseInt( res.data.message.match( /(\d+)$/ )[ 0 ], 10 );
             localStorage.setItem( "user_id", user_id );
-            push( "/plantlist" );
+            window.location.replace( "/plantlist" );
           } )
           .catch( ( err ) => {
             console.log( err );
