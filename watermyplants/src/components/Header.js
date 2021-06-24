@@ -6,14 +6,16 @@ import '../styles/Header.css';
 
 const HEADER = "header__";
 
-const Header = () => {
+const Header = (props) => {
   
-  const [ token, setToken ] = useState( localStorage.getItem( "token" ) );
+  const [ token, setToken ] = useState(props.token);
 
-  let nav = token ? "/plantlist" : "/";
+  const [ nav, setNav ] = useState( "/" );
+
   useEffect( () => {
-    setToken(localStorage.getItem( "token" ));
-  }, [ localStorage ] );
+    setToken( props.token );
+    setNav( token ? "/plantlist" : "/" );
+  }, [ props ] );
 
   const logout = () => {
     localStorage.removeItem( "token" );
