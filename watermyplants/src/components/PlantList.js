@@ -8,9 +8,12 @@ import { useHistory } from "react-router-dom";
 import '../styles/PlantList.css';
 
 
-const PlantList = (props) => {
+const PlantList = ( props ) => {
+  
   const getPlants = props.getPlants;
+  
   const { push } = useHistory();
+
   useEffect(() => {
     // debugger;
     getPlants();

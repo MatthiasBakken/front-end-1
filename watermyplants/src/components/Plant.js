@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { addPlant } from "../actions/plantActions";
 import { useHistory } from "react-router-dom";
 
+import '../styles/Plant.css';
+
 
 const initialState = {
   nickname: "",
