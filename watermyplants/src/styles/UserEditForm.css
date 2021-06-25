@@ -1,3 +1,35 @@
-
+.user-edit__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 50vh;
+  background: white;
+}
+.user-edit__container h4 {
+  font-size: 2em;
+}
+.user-edit__container form {
+  font-size: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.user-edit__container form input {
+  font-size: 1.5em;
+}
+.user-edit__container form button {
+  font-size: 1.5em;
+  width: 120px;
+  height: 40px;
+  margin-top: 40px;
+  align-self: center;
+  border-radius: 8px;
+}
+.user-edit__container form button:hover {
+  background: chocolate;
+  color: white;
+}
 
 /*# sourceMappingURL=UserEditForm.css.map */

@@ -7,6 +7,9 @@
   border: 2px solid white;
   box-shadow: 3px 4px 10px #202020;
 }
+.plant-details__container h2 {
+  font-size: 2em;
+}
 .plant-details__container .plant-details__content {
   display: flex;
   flex-direction: column;
@@ -14,6 +17,25 @@
 }
 .plant-details__container .plant-details__content img {
   width: 50%;
+}
+.plant-details__container .plant-details__content p {
+  font-size: 1.5em;
+  margin: 5px;
+}
+.plant-details__container .plant-details__buttons {
+  display: flex;
+  margin: 20px;
+}
+.plant-details__container .plant-details__buttons button {
+  height: 40px;
+  border-radius: 8px;
+  font-size: 2em;
+  margin: 10px;
+}
+.plant-details__container .plant-details__buttons button:hover {
+  background: chocolate;
+  cursor: pointer;
+  color: white;
 }
 
 /*# sourceMappingURL=PlantDetails.css.map */

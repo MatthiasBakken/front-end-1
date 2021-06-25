@@ -67,9 +67,9 @@ const Plant = (props) => {
         </div>
 
         <div className={`${PLANT}buttons-container`}>
-          <button type="submit">add plant</button>
+          <button type="submit">ADD</button>
           <button onClick={onCancel}>
-            cancel
+            CANCEL
           </button>
         </div>
       </form>

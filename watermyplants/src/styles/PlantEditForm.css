@@ -1,3 +1,36 @@
-
+.plant-edit__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  background: white;
+  width: 50%;
+  height: 50vh;
+}
+.plant-edit__container form {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5em;
+}
+.plant-edit__container form input {
+  margin-bottom: 20px;
+}
+.plant-edit__container form .plant-edit__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.plant-edit__container form .plant-edit__buttons button {
+  height: 40px;
+  width: 120px;
+  font-size: 1.5em;
+  border-radius: 8px;
+  margin: 10px;
+}
+.plant-edit__container form .plant-edit__buttons button:hover {
+  background: chocolate;
+  color: white;
+}
 
 /*# sourceMappingURL=PlantEditForm.css.map */

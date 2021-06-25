@@ -36,12 +36,14 @@ const PlantDetails = (props) => {
 
       <div className={`${DETAILS}content`}>
         <img className="plantImage" src={plantImage} alt="plant" />
-        <p>nickname: {plant.nickname}</p>
+        <p>Nickname: {plant.nickname}</p>
         <p>Species: {plant.species}</p>
         <p>Watering Frequency: {plant.h20_frequency}</p>
       </div>
-      <button onClick={handleDelete}>delete plant </button>
-      <button onClick={handleEdit}>Edit plant </button>
+      <div className={`${DETAILS}buttons`}>
+        <button onClick={handleDelete}>DELETE</button>
+        <button onClick={handleEdit}>EDIT</button>
+      </div>
     </div>
   );
 };

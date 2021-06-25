@@ -4,63 +4,60 @@ import { connect } from "react-redux";
 import { addUser } from "../actions/userActions";
 import { useHistory } from "react-router-dom";
 
+import '../styles/Registration.css';
 
-const Registration = (props) => {
-  const [state, setState] = useState({
+
+const SIGN = "signup__";
+
+const Registration = ( props ) => {
+  const [ state, setState ] = useState( {
     username: "",
     password: "",
     phonenumber: "",
-  });
+  } );
 
   const { push } = useHistory();
 
-  const handleChange = (e) => {
-    setState({
+  const handleChange = ( e ) => {
+    setState( {
       ...state,
-      [e.target.name]: e.target.value,
-    });
+      [ e.target.name ]: e.target.value,
+    } );
   };
 
   const addUser = props.addUser;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = ( e ) => {
     e.preventDefault();
-    addUser(state);
-    push("/login");
+    addUser( state );
+    push( "/login" );
   };
 
   return (
-    <div>
-      <p>
-        <strong>Welcome to Water My Plants!</strong>
-        <br />
-        <i>Create your account here!</i>
-      </p>
+    <div className={`${SIGN}container`}>
+      <span className={`${SIGN}upper-content`}>
+        <p><strong>Welcome to Water My Plants!</strong></p>
+        <p><i>Create your account here!</i></p>
+      </span>
       <form onSubmit={handleSubmit}>
-        <label>
-          Username:
-          <input
-            name="username"
-            value={state.username}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Phone Number:
-          <input
-            name="phonenumber"
-            value={state.phonenumber}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Password:
-          <input
-            name="password"
-            value={state.password}
-            onChange={handleChange}
-          />
-        </label>
+        <label>Username:</label>
+        <input
+          name="username"
+          value={state.username}
+          onChange={handleChange}
+        />
+        <label>Phone Number:</label>
+        <input
+          name="phonenumber"
+          value={state.phonenumber}
+          onChange={handleChange}
+        />
+        <label>Password:</label>
+        <input
+          name="password"
+          value={state.password}
+          onChange={handleChange}
+        />
         <button>Complete</button>
       </form>
     </div>

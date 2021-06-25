@@ -3,14 +3,19 @@ import { connect } from "react-redux";
 import { editPlant } from "../actions/plantActions";
 import { useHistory } from "react-router-dom";
 
+import '../styles/PlantEditForm.css';
+
+
+const EDIT = "plant-edit__";
 
 const PlantEditForm = (props) => {
   const plant_id = localStorage.getItem("plant_id");
-  const currentPlant = props.plants.filter((plant) =>
+  const currentPlant = props.plants.filter( ( plant ) =>
     Number(plant.plant_id === Number(plant_id))
   );
 
-  const [form, setForm] = useState(currentPlant[0]);
+  const [ form, setForm ] = useState( currentPlant[ 0 ] )
+  
   const { push } = useHistory();
 
   const onCancel = () => {
@@ -32,41 +37,28 @@ const PlantEditForm = (props) => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <label>
-        Plant Name:
+    <div className={`${EDIT}container`}>
+      <form onSubmit={onSubmit}>
+        <label>Plant Name:</label>
         <input name="nickname" value={form.nickname} onChange={handleChange} />
-      </label>
 
-      <label>
-        Plant Species:
+        <label>Plant Species:</label>
         <input name="species" value={form.species} onChange={handleChange} />
-      </label>
 
-      <br />
-      <label>
-        Watering Frequency:
-        <input
-          name="h20_frequency"
-          value={form.h20_frequency}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Plant Image:
-        <input
-          name="plant_img"
-          value={form.plant_img}
-          onChange={handleChange}
-        />
-      </label>
-      <div className="form-group submit">
-        <button>submit changes</button>
-        <button id="cancelBtn" onClick={onCancel}>
-          cancel
-        </button>
-      </div>
-    </form>
+        <label>Watering Frequency:</label>
+        <input name="h20_frequency" value={form.h20_frequency} onChange={handleChange}/>
+        
+        <label>Plant Image:</label>
+        <input name="plant_img" value={form.plant_img} onChange={handleChange}/>
+
+        <div className={`${EDIT}buttons`}>
+          <button>SUBMIT</button>
+          <button id="cancelBtn" onClick={onCancel}>
+            CANCEL
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };
 

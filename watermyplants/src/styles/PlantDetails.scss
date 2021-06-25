@@ -6,12 +6,34 @@
 	margin-bottom: 30px;
 	border: 2px solid rgb(255, 255, 255);
 	box-shadow: 3px 4px 10px rgb(32, 32, 32);
+	h2 {
+		font-size: 2em;
+	}
 	.plant-details__content {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		img {
 			width: 50%;
+		}
+		p {
+			font-size: 1.5em;
+			margin: 5px;
+		}
+	}
+	.plant-details__buttons {
+		display: flex;
+		margin: 20px;
+		button {
+			height: 40px;
+			border-radius: 8px;
+			font-size: 2em;
+			margin: 10px;
+		}
+		button:hover {
+			background: chocolate;
+			cursor: pointer;
+			color: white;
 		}
 	}
 }

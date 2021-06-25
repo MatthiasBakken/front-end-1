@@ -4,4 +4,15 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	button {
+		height: 40px;
+		border-radius: 8px;
+		font-size: 2em;
+		margin-bottom: 20px;
+	}
+	button:hover {
+		background: chocolate;
+		cursor: pointer;
+		color: white;
+	}
 }

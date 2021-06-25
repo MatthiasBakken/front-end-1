@@ -3,6 +3,11 @@ import { connect } from "react-redux";
 import { getUser } from "../actions/userActions";
 import { useHistory } from "react-router-dom";
 
+import '../styles/User.css';
+
+
+const USER = 'user-info__';
+
 const User = (props) => {
   const { user } = props;
   const { push } = useHistory();
@@ -20,19 +25,14 @@ const User = (props) => {
   };
 
   return (
-    <div className="profileContainer">
+    <div className={`${USER}container`}>
       <h2>User Profile</h2>
-      {
-        <div>
-          <p>User name</p>
-          <p>{user.username}</p>
-          <p>Phone number</p>
-          <p>{user.phonenumber}</p>
-        </div>
-      }
-      <button>complete</button>
-      <button>cancel</button>
-
+      <div className={`${USER}content`}>
+        <label>Username:</label>
+        <p>{user.username}</p>
+        <label>Phone Number:</label>
+        <p>{user.phonenumber}</p>
+      </div>
       <button onClick={handleEdit}>Edit</button>
     </div>
   );

@@ -1,3 +1,44 @@
-
+.plant-form__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  background: white;
+  width: 50%;
+  height: 50vh;
+}
+.plant-form__container .plant-form__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.plant-form__container .plant-form__form h4 {
+  font-size: 2em;
+}
+.plant-form__container .plant-form__form .plant-form__label-input-containers {
+  font-size: 1.5em;
+  display: flex;
+  flex-direction: column;
+}
+.plant-form__container .plant-form__form .plant-form__label-input-containers input {
+  margin-bottom: 20px;
+}
+.plant-form__container .plant-form__form .plant-form__buttons-container {
+  display: flex;
+  margin-top: 10px;
+}
+.plant-form__container .plant-form__form .plant-form__buttons-container button {
+  height: 40px;
+  width: 120px;
+  font-size: 2em;
+  border-radius: 8px;
+  margin: 5px;
+}
+.plant-form__container .plant-form__form .plant-form__buttons-container button:hover {
+  background: chocolate;
+  color: white;
+}
 
 /*# sourceMappingURL=Plant.css.map */

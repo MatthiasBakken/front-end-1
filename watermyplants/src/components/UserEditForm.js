@@ -3,6 +3,10 @@ import { editUser } from "../actions/userActions";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 
+import '../styles/UserEditForm.css';
+
+
+const USER = "user-edit__";
 
 const UserEditForm = ( props ) => {
 
@@ -30,15 +34,11 @@ const UserEditForm = ( props ) => {
   };
 
   return (
-    <div>
-      <header>
-        <h4>{user.username}</h4>
-      </header>
-
-      <h4>Profile Settings</h4>
+    <div className={`${USER}container`}>
+      <h4>{user.username}'s Profile Settings</h4>
       <form onSubmit={handleSubmit}>
-        <label>
-          Phone number: {user.phonenumber}
+        <label>Phone number:</label>
+        <p>{user.phonenumber}</p>
           {editPhone ? (
             <input
               name="phonenumber"
@@ -46,10 +46,10 @@ const UserEditForm = ( props ) => {
               onChange={handleChange}
             />
           ) : (
-            <button onClick={handlePhoneNumberEdit}>edit</button>
+            <button onClick={handlePhoneNumberEdit}>EDIT</button>
           )}
-        </label>
-        <button>Submit</button>
+        
+        <button>SUBMIT</button>
       </form>
     </div>
   );

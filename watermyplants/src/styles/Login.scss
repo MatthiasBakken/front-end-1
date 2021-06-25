@@ -1,0 +1,81 @@
+.login__container {
+	display: flex;
+	background: white;
+	width: 50%;
+	height: 50vh;
+	margin-top: 20px;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	.login__form {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		.login__labels-inputs-container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			.login__input-sections {
+				display: flex;
+				flex-direction: column;
+				font-size: 1.5em;
+				margin-bottom: 20px;
+			}
+		}
+		button {
+			height: 40px;
+			font-size: 2em;
+			border-radius: 8px;
+		}
+		button:hover {
+			cursor: pointer;
+			background: chocolate;
+			color: white;
+		}
+	}
+	.login__no-account {
+		font-size: 1.2em;
+		button {
+			margin-left: 5px;
+			border-radius: 8px;
+		}
+		button:hover {
+			cursor: pointer;
+			background: chocolate;
+			color: white;
+		}
+	}
+}
+
+// 	.signup__upper-content {
+// 		display: flex;
+// 		flex-direction: column;
+// 		justify-content: center;
+// 		align-items: center;
+// 		font-size: 2em;
+// 		p {
+// 			margin: 5px;
+// 		}
+// 		margin-bottom: 20px;
+// 	}
+// 	form {
+// 		display: flex;
+// 		flex-direction: column;
+// 		font-size: 1.5em;
+// 		input {
+// 			margin-bottom: 20px;
+// 		}
+// 		button {
+// 			height: 40px;
+// 			font-size: 20px;
+// 			border-radius: 8px;
+// 		}
+// 		button:hover {
+// 			cursor: pointer;
+// 			background: chocolate;
+// 			color: white;
+// 		}
+// 	}
+// }
