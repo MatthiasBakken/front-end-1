@@ -1,13 +1,19 @@
 import React, { useEffect } from "react";
 
-import PlantDetails from "./plantDetailsComponent";
+import PlantDetails from "./PlantDetails";
 import { getPlants } from "../actions/plantActions";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 
-const PlantList = (props) => {
+import '../styles/PlantList.css';
+
+
+const PlantList = ( props ) => {
+  
   const getPlants = props.getPlants;
+  
   const { push } = useHistory();
+
   useEffect(() => {
     // debugger;
     getPlants();
@@ -20,11 +26,10 @@ const PlantList = (props) => {
   if (props.isLoading) {
     return <h1>Loading...</h1>;
   }
-  // console.log("Plants in PlantList");
-  // console.log(props.plants);
+
   return (
-    <div className="plantListContainer">
-      <button onClick={handleAddPlant}>add plant </button>
+    <div className="plant-list__container">
+      <button onClick={handleAddPlant}>Add Plant</button>
       {props.plants.map((plant, index) => {
         return <PlantDetails plant={plant} key={index} />;
       })}

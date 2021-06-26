@@ -1,0 +1,30 @@
+.home-page__container {
+	display: flex;
+	background: white;
+	width: 50%;
+	height: 50vh;
+	margin-top: 20px;
+	align-items: center;
+	justify-content: center;
+	.home-page__content {
+		display: flex;
+		flex-direction: column;
+		a {
+			color: white;
+			text-decoration: none;
+			background: chocolate;
+			margin: 40px;
+			width: 150px;
+			height: 40px;
+			font-size: 2em;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 8px;
+		}
+		a:hover {
+			box-shadow: 3px 3px 6px gray;
+		}
+	}
+}

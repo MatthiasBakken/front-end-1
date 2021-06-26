@@ -3,58 +3,42 @@ import { editUser } from "../actions/userActions";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 
-const UserEditForm = (props) => {
-  const [user, setUser] = useState(props.user);
+import '../styles/UserEditForm.css';
+
+
+const USER = "user-edit__";
+
+const UserEditForm = ( props ) => {
+
+  const [ user, setUser ] = useState( props.user );
+
   const { push } = useHistory();
-  //   const [editPassWord, setEditPassWord] = useState();
-  const [editPhone, setEditPhone] = useState();
 
-  //   const handlePassWordEdit = (e) => {
-  //     e.preventDefault;
-  //     setEditPassWord(true);
-  //   };
+  const [ editPhone, setEditPhone ] = useState();
 
-  const handlePhoneNumberEdit = (e) => {
-    e.preventDefault;
-    setEditPhone(true);
+  const handlePhoneNumberEdit = () => {
+    setEditPhone( true );
   };
 
-  const handleChange = (e) => {
-    setUser({
+  const handleChange = ( e ) => {
+    setUser( {
       ...user,
-      [e.target.name]: e.target.value,
-    });
+      [ e.target.name ]: e.target.value,
+    } );
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = ( e ) => {
     e.preventDefault();
-    props.editUser(user);
-    push("/user");
+    props.editUser( user );
+    push( "/user" );
   };
 
   return (
-    <div>
-      <header>
-        <h2>Water My Plants</h2>
-        <h4>{user.username}</h4>
-      </header>
-
-      <h4>Profile Settings</h4>
+    <div className={`${USER}container`}>
+      <h4>{user.username}'s Profile Settings</h4>
       <form onSubmit={handleSubmit}>
-        {/* <label>
-          Password: {user.password}
-          {editPassWord ? (
-            <input
-              name="password"
-              value={user.password}
-              onChange={handleChange}
-            />
-          ) : (
-            <button onClick={handlePassWordEdit}>edit</button>
-          )}
-        </label> */}
-        <label>
-          Phone number: {user.phonenumber}
+        <label>Phone number:</label>
+        <p>{user.phonenumber}</p>
           {editPhone ? (
             <input
               name="phonenumber"
@@ -62,20 +46,17 @@ const UserEditForm = (props) => {
               onChange={handleChange}
             />
           ) : (
-            <button onClick={handlePhoneNumberEdit}>edit</button>
+            <button onClick={handlePhoneNumberEdit}>EDIT</button>
           )}
-        </label>
-        <button>Submit</button>
+        
+        <button>SUBMIT</button>
       </form>
     </div>
   );
 };
 
-const mapStateToProps = (state) => {
-  const user_id = Number(localStorage.getItem("user_id"));
-
+const mapStateToProps = ( state ) => {
   const userInfo = state.user.user;
-
   return {
     user: userInfo,
   };

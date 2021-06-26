@@ -1,0 +1,33 @@
+.user-info__container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+	background: white;
+	width: 50%;
+	height: 50vh;
+	h2 {
+		font-size: 2em;
+	}
+	.user-info__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		font-size: 1.5em;
+		label {
+			font-weight: bold;
+		}
+	}
+	button {
+		height: 40px;
+		width: 120px;
+		font-size: 2em;
+		border-radius: 8px;
+		margin: 20px;
+	}
+	button:hover {
+		background: chocolate;
+		color: white;
+	}
+}

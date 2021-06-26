@@ -1,9 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { getUser } from "../actions/userActions";
 import { useHistory } from "react-router-dom";
 
-const userProfileComp = (props) => {
+import '../styles/User.css';
+
+
+const USER = 'user-info__';
+
+const User = (props) => {
   const { user } = props;
   const { push } = useHistory();
 
@@ -20,27 +25,20 @@ const userProfileComp = (props) => {
   };
 
   return (
-    <div className="profileContainer">
+    <div className={`${USER}container`}>
       <h2>User Profile</h2>
-      {
-        <div>
-          <p>User name</p>
-          <p>{user.username}</p>
-          <p>Phone number</p>
-          <p>{user.phonenumber}</p>
-        </div>
-      }
-      <button>complete</button>
-      <button>cancel</button>
-
+      <div className={`${USER}content`}>
+        <label>Username:</label>
+        <p>{user.username}</p>
+        <label>Phone Number:</label>
+        <p>{user.phonenumber}</p>
+      </div>
       <button onClick={handleEdit}>Edit</button>
     </div>
   );
 };
 
 const mapStateToProps = (state) => {
-  const user_id = Number(localStorage.getItem("user_id"));
-
   const userInfo = state.user.user;
 
   return {
@@ -48,4 +46,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { getUser })(userProfileComp);
+export default connect(mapStateToProps, { getUser })(User);

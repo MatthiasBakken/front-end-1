@@ -1,0 +1,41 @@
+.signup__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  background: white;
+  width: 50%;
+  height: 50vh;
+}
+.signup__container .signup__upper-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.signup__container .signup__upper-content p {
+  margin: 5px;
+}
+.signup__container form {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5em;
+}
+.signup__container form input {
+  margin-bottom: 20px;
+}
+.signup__container form button {
+  height: 40px;
+  font-size: 20px;
+  border-radius: 8px;
+}
+.signup__container form button:hover {
+  cursor: pointer;
+  background: chocolate;
+  color: white;
+}
+
+/*# sourceMappingURL=Registration.css.map */

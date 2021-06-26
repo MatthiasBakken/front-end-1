@@ -1,6 +1,5 @@
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
 
 export const LOADING_USER = "LOADING_USER";
 export const USER_SUCCESS = "USER_SUCCESS";
@@ -14,8 +13,6 @@ export const getUser = () => (dispatch) => {
   axiosWithAuth()
     .get(`/users/${user_id}`)
     .then((res) => {
-      console.log("get user axios:");
-      console.log(res);
       dispatch({ type: USER_SUCCESS, payload: res.data });
     })
     .catch((err) => {
